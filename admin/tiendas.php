@@ -78,8 +78,44 @@ include("includes/header.php");
                                     <input type="hidden" name="accion" value="eliminar">
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
                                 </form>
+                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#editarTienda<?php echo $data['id_tienda']; ?>">Editar</button>
                             </td>
                         </tr>
+                        <!-- Modal -->
+                        <div class="modal fade" id="editarTienda<?php echo $data['id_tienda']; ?>" tabindex="-1" role="dialog" aria-labelledby="editarTiendaLabel<?php echo $data['id_tienda']; ?>" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editarTiendaLabel<?php echo $data['id_tienda']; ?>">Editar Tienda</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="editar_tienda.php" method="POST" autocomplete="off">
+                                            <input type="hidden" name="id_tienda" value="<?php echo $data['id_tienda']; ?>">
+                                            <div class="form-group">
+                                                <label for="nombre_tienda">Nombre</label>
+                                                <input id="nombre_tienda" class="form-control" type="text" name="nombre_tienda" value="<?php echo $data['nombre_tienda']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ciudad">Ciudad</label>
+                                                <input id="ciudad" class="form-control" type="text" name="ciudad" value="<?php echo $data['ciudad']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telefono">Teléfono</label>
+                                                <input id="telefono" class="form-control" type="text" name="telefono" value="<?php echo $data['telefono']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="categoria">Categoría</label>
+                                                <input id="categoria" class="form-control" type="text" name="categoria" value="<?php echo $data['categoria']; ?>" required>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php } ?>
                 </tbody>
             </table>
@@ -122,3 +158,4 @@ include("includes/header.php");
 </div>
 
 <?php include("includes/footer.php"); ?>
+

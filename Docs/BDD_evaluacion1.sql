@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-03-2024 a las 06:02:05
+-- Tiempo de generación: 01-03-2024 a las 21:20:17
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `quinto`
+-- Base de datos: `evaluacion1`
 --
 
 -- --------------------------------------------------------
@@ -45,7 +45,8 @@ INSERT INTO `productos` (`id_producto`, `nombre_producto`, `precio`, `stock`, `p
 (16, 'Correa Givenchi', 78.00, 20, 'Givenchi'),
 (19, 'Chaqueta de Cuero', 60.00, 10, 'RM Company\r\n'),
 (20, 'Reloj marca Rolex', 1500.00, 3, 'Rolex'),
-(21, 'Vans Old School Pro', 100.00, 20, 'Vans ');
+(21, 'Vans Old School Pro', 120.00, 20, 'Vans '),
+(22, 'Hello world', 10.00, 20, 'Python');
 
 -- --------------------------------------------------------
 
@@ -141,6 +142,7 @@ INSERT INTO `vende` (`nombre_tienda`, `nombre_producto`) VALUES
 ('RM', 'Chaqueta de Cuero'),
 ('RM', 'Reloj marca Rolex'),
 ('Shein', 'Camiseta Talla M'),
+('Shein', 'Funda de leche'),
 ('Vans', 'Vans Old School Pro');
 
 --
@@ -194,7 +196,7 @@ ALTER TABLE `vende`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -206,7 +208,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tiendas`
 --
 ALTER TABLE `tiendas`
-  MODIFY `id_tienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_tienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

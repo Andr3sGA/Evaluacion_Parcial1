@@ -78,8 +78,44 @@ include("includes/header.php");
                                     <input type="hidden" name="accion" value="eliminar">
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
                                 </form>
+                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#editarProducto<?php echo $data['id_producto']; ?>">Editar</button>
                             </td>
                         </tr>
+                        <!-- Modal -->
+                        <div class="modal fade" id="editarProducto<?php echo $data['id_producto']; ?>" tabindex="-1" role="dialog" aria-labelledby="editarProductoLabel<?php echo $data['id_producto']; ?>" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editarProductoLabel<?php echo $data['id_producto']; ?>">Editar Producto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="editar_producto.php" method="POST" autocomplete="off">
+                                            <input type="hidden" name="id_producto" value="<?php echo $data['id_producto']; ?>">
+                                            <div class="form-group">
+                                                <label for="nombre_producto">Nombre</label>
+                                                <input id="nombre_producto" class="form-control" type="text" name="nombre_producto" value="<?php echo $data['nombre_producto']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="precio">Precio</label>
+                                                <input id="precio" class="form-control" type="text" name="precio" value="<?php echo $data['precio']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="stock">Stock</label>
+                                                <input id="stock" class="form-control" type="text" name="stock" value="<?php echo $data['stock']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="proveedor">Proveedor</label>
+                                                <input id="proveedor" class="form-control" type="text" name="proveedor" value="<?php echo $data['proveedor']; ?>" required>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php } ?>
                 </tbody>
             </table>
@@ -88,7 +124,7 @@ include("includes/header.php");
 </div>
 
 <div id="productos" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-gradient-primary text-white">
                 <h5 class="modal-title" id="title">Nuevo Producto</h5>
@@ -132,4 +168,5 @@ include("includes/header.php");
 </div>
 
 <?php include("includes/footer.php"); ?>
+
 
