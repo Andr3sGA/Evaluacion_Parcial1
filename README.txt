@@ -1,6 +1,6 @@
 Creedenciales de acceso:
 
-Link: http://localhost/tarea2_s1/admin/
+Link: http://localhost/Evaluacion_Parcial1/admin/
 
 Usuario: aBell
 
